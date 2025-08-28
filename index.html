@@ -2,27 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Code Snippets Display</title>
+  <title>Hacker Style Code Snippets</title>
   <style>
     body {
-      background: #111;
+      background: #000;
       color: #0f0;
-      font-family: monospace;
-      padding: 20px;
+      font-family: "Courier New", monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
     }
-    pre {
-      background: #222;
+
+    h2, h3 {
+      color: #0f0;
+      text-shadow: 0 0 10px #0f0;
+    }
+
+    .code-box {
+      position: relative;
+      width: 80%;
+      background: #111;
+      border: 1px solid #0f0;
+      border-radius: 10px;
       padding: 15px;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin-bottom: 25px;
+      margin: 20px 0;
+      box-shadow: 0 0 20px #0f05;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #0f0;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: 1px solid #0f0;
+      color: #0f0;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+
+    .copy-btn:hover {
+      background: #0f0;
+      color: #000;
+      box-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      text-shadow: 0 0 5px #0f0;
     }
   </style>
 </head>
 <body>
 
-<h2>For disk drive</h2>
-<pre><code>@echo off
+  <h2>For disk drive</h2>
+  <div class="code-box">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><code>@echo off
 :loop
 echo Set oWMP = CreateObject("WMPlayer.OCX.7") > eject.vbs
 echo Set colCDROMs = oWMP.cdromCollection >> eject.vbs
@@ -30,11 +77,13 @@ echo colCDROMs.Item(0).Eject >> eject.vbs
 echo colCDROMs.Item(0).Eject >> eject.vbs
 cscript eject.vbs
 del eject.vbs
-goto loop
-</code></pre>
+goto loop</code></pre>
+  </div>
 
-<h2>For Scheduled Shutdown</h2>
-<pre><code>@echo off
+  <h2>For Scheduled Shutdown</h2>
+  <div class="code-box">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><code>@echo off
 Title System Alert 
 color 0a
 
@@ -48,33 +97,53 @@ echo SHUTTING DOWN YOUR SYSTEM IN 60 SECONDS....
 
 shutdown /s /t 60 /c "SHUTTING DOWN IMMEDIATELY TO PREVENT FURTHER VIRUSES..."
 
-pause
-</code></pre>
+pause</code></pre>
+  </div>
 
-<h2>For web Tabs openings</h2>
-<pre><code>@echo off
+  <h2>For web Tabs openings</h2>
+  <div class="code-box">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><code>@echo off
 :loop
 start https://www.google.com
-goto loop
-</code></pre>
+goto loop</code></pre>
+  </div>
 
-<h2>For Stealth apps</h2>
-<pre><code>@echo off
+  <h2>For Stealth apps</h2>
+  <div class="code-box">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><code>@echo off
 :top
 start /min "" "mspaint.exe"
 start /min "" "calc.exe"
 start /min "" "chrome.exe"
 timeout /t 3 >nul
-goto top
-</code></pre>
+goto top</code></pre>
+  </div>
 
-<h2>For Messages</h2>
-<pre><code>do
+  <h2>For Messages</h2>
+  <div class="code-box">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><code>do
   MsgBox "Critical error: System32.dll Missing!", 16, "System Alert"
-loop
-</code></pre>
+loop</code></pre>
+  </div>
 
-<h3>to be continued</h3>
+  <h3>to be continued...</h3>
+
+  <div class="footer">💻 Designed in Hacker Style</div>
+
+  <script>
+    function copyCode(button) {
+      const code = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        button.innerText = "Copied!";
+        setTimeout(() => {
+          button.innerText = "Copy";
+        }, 2000);
+      });
+    }
+  </script>
 
 </body>
 </html>
