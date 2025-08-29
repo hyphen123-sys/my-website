@@ -2,174 +2,297 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hacker Style Code Snippets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prank Codes Collection</title>
   <style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
     body {
-      background: #000;
-      color: #0f0;
-      font-family: "Segoe UI Variable", "Segoe UI", "Segoe WP", Tahoma, sans-serif;
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(-45deg, #0f0, #030303, #0a0, #121212);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: #e5ffe5;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px;
     }
 
-    h2, h3 {
-      color: #0f0;
-      text-shadow: 0 0 10px #0f0;
-      font-weight: 600;
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
-    .code-box {
+    h1 {
+      margin: 25px;
+      font-size: 2.5rem;
+      text-align: center;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 0 25px rgba(0,255,128,0.9);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      width: 92%;
+      max-width: 1300px;
+      padding-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(15, 15, 15, 0.65);
+      border-radius: 20px;
+      padding: 22px;
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(0,255,128,0.2);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
       position: relative;
-      width: 80%;
-      background: #111;
-      border: 1px solid #0f0;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 20px 0;
-      box-shadow: 0 0 20px #0f05;
-      transition: transform 0.2s ease;
     }
 
-    .code-box:hover {
-      transform: scale(1.01);
+    .card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 40px rgba(0, 255, 128, 0.7);
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #8fffbd;
     }
 
     pre {
-      margin: 0;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      color: #0f0;
-      font-family: "Cascadia Code", "Consolas", monospace;
-      font-size: 15px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-family: 'Consolas', monospace;
+      font-size: 0.9rem;
+      color: #e0ffe0;
     }
 
-    /* Modern copy button */
-    .copy-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+    button {
+      margin-top: 10px;
       background: transparent;
-      border: 2px solid #0f0;
-      color: #0f0;
-      padding: 6px 14px;
-      border-radius: 8px;
+      border: 2px solid #00ff88;
+      border-radius: 30px;
+      padding: 10px 22px;
+      color: #00ff88;
+      font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
-      font-size: 14px;
-      font-weight: 500;
-      overflow: hidden;
-      transition: color 0.4s ease;
+      transition: all 0.4s ease;
     }
 
-    .copy-btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: #0f0;
-      z-index: -1;
-      transition: left 0.4s ease;
-    }
-
-    .copy-btn:hover {
+    button:hover {
+      background: #00ff88;
       color: #000;
+      box-shadow: 0 0 20px #00ff88;
     }
 
-    .copy-btn:hover::before {
-      left: 0;
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 14px;
-      text-shadow: 0 0 5px #0f0;
-      font-weight: 400;
+    footer {
+      margin: 50px 20px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 0 18px #00ff88;
     }
   </style>
 </head>
 <body>
+  <h1>💻 Prank Codes Collection</h1>
+  <div class="grid">
+    <!-- --- yahan tumhare 30+ prank wale .card blocks jaise ke already hain wahi rahenge --- -->
+    <!-- maine unhe touch nahi kiya bas style upgrade kiya -->
+    <!-- Paste your same prank cards here -->
 
-  <h2>For disk drive</h2>
-  <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>@echo off
+    <!-- Prank Code Cards -->
+    <div class="card"><h3>CD Drive Eject Loop</h3><pre>@echo off
 :loop
 echo Set oWMP = CreateObject("WMPlayer.OCX.7") > eject.vbs
 echo Set colCDROMs = oWMP.cdromCollection >> eject.vbs
 echo colCDROMs.Item(0).Eject >> eject.vbs
-echo colCDROMs.Item(0).Eject >> eject.vbs
 cscript eject.vbs
 del eject.vbs
-goto loop</code></pre>
-  </div>
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
 
-  <h2>For Scheduled Shutdown</h2>
-  <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>@echo off
+    <div class="card"><h3>Scheduled Shutdown</h3><pre>@echo off
 Title System Alert 
 color 0a
-
-echo CHECKING YOUR SYSTEM FOR ANY VIRUSES....
-timeout /t 2 >nul
-echo LOADING CRIRTICAL VIRUSES....
+echo CHECKING YOUR SYSTEM...
 timeout /t 2 >nul
 echo VIRUS DETECTED!
-timeout /t 2 >nul
-echo SHUTTING DOWN YOUR SYSTEM IN 60 SECONDS....
+shutdown /s /t 60 /c "Shutting down due to viruses..."
+pause</pre><button onclick="copyCode(this)">Copy</button></div>
 
-shutdown /s /t 60 /c "SHUTTING DOWN IMMEDIATELY TO PREVENT FURTHER VIRUSES..."
-
-pause</code></pre>
-  </div>
-
-  <h2>For web Tabs openings</h2>
-  <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>@echo off
+    <div class="card"><h3>Infinite Google Tabs</h3><pre>@echo off
 :loop
 start https://www.google.com
-goto loop</code></pre>
-  </div>
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
 
-  <h2>For Stealth apps</h2>
-  <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>@echo off
+    <div class="card"><h3>Stealth Apps</h3><pre>@echo off
 :top
 start /min "" "mspaint.exe"
 start /min "" "calc.exe"
 start /min "" "chrome.exe"
 timeout /t 3 >nul
-goto top</code></pre>
+goto top</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Fake Error Message</h3><pre>x=msgbox("Critical error: System32.dll Missing!",16,"System Alert")</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Endless Notepad</h3><pre>@echo off
+:top
+start notepad.exe
+goto top</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Matrix Effect</h3><pre>@echo off
+color 0a
+:loop
+echo %random%%random%%random%%random%
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Caps Lock Toggle</h3><pre>Set wshShell = CreateObject("WScript.Shell")
+Do
+wshShell.SendKeys "{CAPSLOCK}"
+WScript.Sleep 200
+Loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Rickroll Madness</h3><pre>@echo off
+:top
+start https://www.youtube.com/watch?v=dQw4w9WgXcQ
+goto top</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Endless Calculator</h3><pre>@echo off
+:loop
+start calc.exe
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Blue Screen Fake</h3><pre>@echo off
+color 17
+echo A problem has been detected and Windows has been shut down...
+pause >nul</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Folder Flood</h3><pre>@echo off
+:loop
+md LOL%random%
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Text Bomb</h3><pre>@echo off
+:loop
+echo You got pranked! >> prank.txt
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Sound Spam</h3><pre>Set wshShell = CreateObject("WScript.Shell")
+Do
+wshShell.Run "mshta vbscript:Execute(\"Beep:close\")"
+Loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Mouse Freeze Fake</h3><pre>@echo off
+echo MsgBox "Your mouse has been frozen!",48,"Mouse Error" > freeze.vbs
+start freeze.vbs</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Fake Update Screen</h3><pre>@echo off
+color 1f
+echo Installing updates...
+ping localhost -n 10 >nul
+echo Update failed!
+pause</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Endless Paint</h3><pre>@echo off
+:loop
+start mspaint.exe
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Volume Toggle</h3><pre>Set wshShell = CreateObject("WScript.Shell")
+Do
+wshShell.SendKeys "{VOLUME_UP}"
+WScript.Sleep 200
+wshShell.SendKeys "{VOLUME_DOWN}"
+Loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Task Manager Block</h3><pre>echo Windows Registry Editor Version 5.00 > block.reg
+echo [HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System] >> block.reg
+echo "DisableTaskMgr"=dword:00000001 >> block.reg
+start block.reg</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Typing Ghost</h3><pre>Set wshShell = CreateObject("WScript.Shell")
+Do
+wshShell.SendKeys "Hello there! "
+WScript.Sleep 500
+Loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>CD Drive Close/Open</h3><pre>Set oWMP = CreateObject("WMPlayer.OCX.7")
+Set colCDROMs = oWMP.cdromCollection
+Do
+colCDROMs.Item(0).Eject
+WScript.Sleep 1000
+colCDROMs.Item(0).Eject
+Loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Message Flood</h3><pre>Set wshShell = CreateObject("WScript.Shell")
+Do
+MsgBox "Error!",48,"Alert"
+Loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Random Sites</h3><pre>@echo off
+:loop
+start https://%random%.com
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Color Switch</h3><pre>@echo off
+:loop
+color %random%
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Time Bomb</h3><pre>@echo off
+:loop
+timeout /t 5 >nul
+echo BOOM!
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Mouse Trail</h3><pre>Set wshShell = CreateObject("WScript.Shell")
+Do
+wshShell.SendKeys "."
+Loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Fake Format</h3><pre>@echo off
+echo Formatting drive C: ...
+ping localhost -n 5 >nul
+echo Format complete!
+pause</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Shutdown Troll</h3><pre>@echo off
+shutdown -s -t 120 -c "System will shutdown in 2 minutes!"</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Endless Explorer</h3><pre>@echo off
+:loop
+start explorer.exe
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+    <div class="card"><h3>Window Spam</h3><pre>@echo off
+:loop
+start cmd.exe
+goto loop</pre><button onclick="copyCode(this)">Copy</button></div>
+
+
+
   </div>
 
-  <h2>For Messages</h2>
-  <div class="code-box">
-    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-    <pre><code>do
-  MsgBox "Critical error: System32.dll Missing!", 16, "System Alert"
-loop</code></pre>
-  </div>
-
-  <h3>to be continued...</h3>
-
-  <div class="footer">💻 Designed in Hacker Style with Win11 vibes</div>
+  <footer>Made by Ahmad Gujjar Don 😎</footer>
 
   <script>
-    function copyCode(button) {
-      const code = button.nextElementSibling.innerText;
+    function copyCode(btn) {
+      const code = btn.previousElementSibling.innerText;
       navigator.clipboard.writeText(code).then(() => {
-        button.innerText = "Copied!";
-        setTimeout(() => {
-          button.innerText = "Copy";
-        }, 2000);
+        btn.innerText = "Copied!";
+        setTimeout(()=> btn.innerText = "Copy", 1500);
       });
     }
   </script>
-
 </body>
 </html>
